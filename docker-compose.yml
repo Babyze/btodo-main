@@ -1,0 +1,40 @@
+include:
+  - ../btodo-database/docker-compose.yml
+
+services:
+  account_service:
+    container_name: account_service
+    networks:
+      - btodo
+    build:
+      context: ../btodo-account
+      dockerfile: ../btodo-account/Dockerfile
+    command: npm run start:dev
+    ports:
+      - 50001:50001
+
+  auth_service:
+    container_name: auth_service
+    networks:
+      - btodo
+    build:
+      context: ../btodo-auth
+      dockerfile: ../btodo-auth/Dockerfile
+    command: npm run start:dev
+    ports:
+      - 50000:50000
+
+  api_gateway:
+    container_name: api_gateway
+    networks:
+      - btodo
+    build:
+      context: ../btodo-api-gateway
+      dockerfile: ../btodo-api-gateway/Dockerfile
+    command: npm run start:dev
+    ports:
+      - 3000:3000
+
+networks:
+  btodo:
+    name: btodo-network
