@@ -9,7 +9,7 @@ services:
     build:
       context: ../btodo-account
       dockerfile: ../btodo-account/Dockerfile
-    command: npm run start:dev
+    command: npm run start:docker
     ports:
       - 50001:50001
 
@@ -20,7 +20,7 @@ services:
     build:
       context: ../btodo-auth
       dockerfile: ../btodo-auth/Dockerfile
-    command: npm run start:dev
+    command: npm run start:docker
     ports:
       - 50000:50000
 
@@ -31,7 +31,7 @@ services:
     build:
       context: ../btodo-api-gateway
       dockerfile: ../btodo-api-gateway/Dockerfile
-    command: npm run start:dev
+    command: npm run start:docker
     ports:
       - 3000:3000
 
