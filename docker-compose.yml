@@ -46,6 +46,17 @@ services:
     ports:
       - 3000:3000
 
+  front_end:
+    container_name: btodo_fe
+    networks:
+      - btodo
+    build:
+      context: ../btodo-fe
+      dockerfile: ../btodo-fe/Dockerfile
+    command: npm run dev
+    ports:
+      - 80:80
+
 networks:
   btodo:
     name: btodo-network
