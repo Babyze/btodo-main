@@ -39,3 +39,5 @@ docker compose up -d
 - [bTodo Frontend](https://github.com/Babyze/btodo-fe): bTodo frontend repository
 
 - [bTodo Proto Buffer](https://github.com/Babyze/btodo-proto): Proto buffer definition repository
+
+- [bTodo Utils](https://github.com/Babyze/btodo-utils): Common library
